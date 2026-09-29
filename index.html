@@ -4,175 +4,158 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Valmix Carreleur | Carrelage professionnel</title>
-
-  <meta name="description"
-    content="Valmix Carreleur - Travaux professionnels de carrelage, rénovation et finition en Haïti.">
+  <title>VALMIX CARRELEUR</title>
 
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
     }
 
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #222;
-      line-height: 1.6;
+      background: #0b0b0b;
+      color: white;
     }
 
+    /* HEADER */
     header {
       background: #111;
-      color: white;
-      padding: 18px 20px;
+      padding: 18px 15px;
+      text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,.25);
-    }
-
-    .nav {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
+      border-bottom: 1px solid #222;
     }
 
     .logo {
-      font-size: 21px;
+      font-size: 25px;
       font-weight: bold;
-      color: #f5c542;
-      white-space: nowrap;
+      color: #f5bd2f;
+      animation: logoPulse 2s infinite;
     }
 
     nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      margin-top: 15px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 5px 8px;
-      font-size: 14px;
+      margin: 0 8px;
+      font-size: 15px;
     }
 
     nav a:hover {
-      color: #f5c542;
+      color: #f5bd2f;
     }
 
+    /* HERO */
     .hero {
-      min-height: 88vh;
+      min-height: 85vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 50px 20px;
-
-      background:
-        linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.68)),
-        linear-gradient(135deg, #555, #111);
-
-      color: white;
+      background: linear-gradient(135deg, #111, #1b1b1b, #080808);
     }
 
     .hero-content {
-      max-width: 850px;
+      animation: fadeUp 1.5s ease;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 11vw, 80px);
-      line-height: 1.05;
+      font-size: clamp(42px, 12vw, 80px);
+      line-height: 1;
       margin-bottom: 20px;
-      letter-spacing: 1px;
     }
 
     .hero h1 span {
-      color: #f5c542;
+      color: #f5bd2f;
     }
 
     .hero p {
-      font-size: clamp(17px, 4vw, 22px);
-      margin-bottom: 30px;
+      font-size: 20px;
+      line-height: 1.6;
+      color: #ddd;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .buttons {
+      margin-top: 30px;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 24px;
-      background: #f5c542;
-      color: #111;
+      padding: 15px 25px;
+      margin: 7px;
+      border-radius: 10px;
       text-decoration: none;
-      border-radius: 8px;
       font-weight: bold;
-      margin: 5px;
-      transition: .2s;
+      transition: .3s;
+    }
+
+    .btn-yellow {
+      background: #f5bd2f;
+      color: #111;
+    }
+
+    .btn-white {
+      background: white;
+      color: #111;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
+      transform: translateY(-5px) scale(1.03);
     }
 
-    .btn.dark {
-      background: white;
-    }
-
-    .btn.whatsapp {
-      background: #25D366;
-      color: white;
-    }
-
-    .btn.call {
-      background: #222;
-      color: white;
-      border: 1px solid #f5c542;
-    }
-
+    /* SECTIONS */
     section {
-      padding: 75px 20px;
-    }
-
-    .container {
+      padding: 70px 20px;
       max-width: 1100px;
       margin: auto;
     }
 
     .title {
       text-align: center;
-      margin-bottom: 45px;
+      color: #f5bd2f;
+      font-size: 32px;
+      margin-bottom: 15px;
     }
 
-    .title h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
+    .subtitle {
+      text-align: center;
+      color: #ccc;
+      margin-bottom: 40px;
     }
 
-    .title span {
-      color: #d39e00;
-    }
-
+    /* SERVICES */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 22px;
+      gap: 20px;
     }
 
     .card {
-      background: white;
+      background: #151515;
       padding: 30px 20px;
       border-radius: 15px;
       text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,.08);
-      transition: .2s;
+      border: 1px solid #292929;
+      transition: .4s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      border-color: #f5bd2f;
     }
 
     .card .icon {
@@ -182,139 +165,118 @@
 
     .card h3 {
       margin-bottom: 10px;
-      font-size: 21px;
+      color: #f5bd2f;
     }
 
-    .about {
-      background: #111;
-      color: white;
+    .card p {
+      color: #ccc;
+      line-height: 1.5;
     }
 
-    .about-box {
-      max-width: 800px;
-      margin: auto;
+    /* PHOTO */
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .photo-gallery img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 2px solid #292929;
+      transition: .4s;
+    }
+
+    .photo-gallery img:hover {
+      transform: scale(1.02);
+      border-color: #f5bd2f;
+    }
+
+    .photo-buttons {
       text-align: center;
+      margin-top: 30px;
     }
 
-    .about-box h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #f5c542;
-    }
-
-    .about-box p {
-      font-size: 17px;
-    }
-
+    /* CONTACT */
     .contact {
-      background: white;
       text-align: center;
+      background: #111;
+      border-radius: 20px;
     }
 
-    .contact-box {
-      max-width: 700px;
-      margin: auto;
+    .contact p {
+      margin: 15px 0;
+      font-size: 18px;
     }
 
-    .contact-item {
-      background: #f5f5f5;
-      padding: 18px;
-      margin: 12px 0;
-      border-radius: 10px;
-      font-size: 17px;
+    .contact strong {
+      color: #f5bd2f;
     }
 
-    .contact-item strong {
-      color: #111;
-    }
-
-    .buttons {
-      margin-top: 25px;
-    }
-
+    /* FOOTER */
     footer {
-      background: #080808;
-      color: white;
       text-align: center;
-      padding: 28px 15px;
-    }
-
-    footer strong {
-      color: #f5c542;
-    }
-
-    .top {
-      margin-top: 15px;
-      font-size: 13px;
+      padding: 30px 15px;
+      background: #050505;
       color: #aaa;
     }
 
-    @media (max-width: 700px) {
+    footer strong {
+      color: #f5bd2f;
+    }
 
-      header {
-        padding: 15px 10px;
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
       }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-      .nav {
-        flex-direction: column;
+    @keyframes logoPulse {
+      0%, 100% {
+        transform: scale(1);
       }
+      50% {
+        transform: scale(1.04);
+      }
+    }
 
-      .logo {
-        font-size: 19px;
-      }
-
-      nav a {
-        font-size: 13px;
-        margin: 4px 6px;
-      }
-
-      .hero {
-        min-height: 80vh;
-      }
-
-      section {
-        padding: 55px 15px;
-      }
-
-      .title h2 {
-        font-size: 30px;
-      }
-
-      .card {
-        padding: 25px 18px;
-      }
+    .animate {
+      animation: fadeUp 1s ease;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- MENU -->
+  <!-- HEADER -->
   <header>
-    <div class="nav">
+    <div class="logo">VALMIX CARRELEUR</div>
 
-      <div class="logo">
-        VALMIX CARRELEUR
-      </div>
-
-      <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#services">Services</a>
-        <a href="#apropos">À propos</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-    </div>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#photo">Photographe</a>
+      <a href="#video">Vidéographe</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
 
   <!-- ACCUEIL -->
   <section class="hero" id="accueil">
-
     <div class="hero-content">
 
       <h1>
-        VALMIX <span>CARRELEUR</span>
+        VALMIX<br>
+        <span>CARRELEUR</span>
       </h1>
 
       <p>
@@ -322,135 +284,135 @@
         et finition professionnelle.
       </p>
 
-      <a class="btn" href="#services">
-        🧱 Nos services
-      </a>
+      <div class="buttons">
+        <a href="#services" class="btn btn-yellow">
+          🧱 Nos services
+        </a>
 
-      <a class="btn dark" href="#contact">
-        📞 Nous contacter
-      </a>
+        <a href="tel:+50948503196" class="btn btn-white">
+          📞 Nous appeler
+        </a>
+      </div>
 
     </div>
-
   </section>
 
 
-  <!-- SERVICES -->
+  <!-- SERVICES CARRELAGE -->
   <section id="services">
 
-    <div class="container">
+    <h2 class="title">🧱 Nos services</h2>
 
-      <div class="title">
+    <p class="subtitle">
+      Des travaux soignés et une finition professionnelle.
+    </p>
 
-        <h2>
-          Nos <span>Services</span>
-        </h2>
+    <div class="services">
 
+      <div class="card">
+        <div class="icon">🧱</div>
+        <h3>Pose de carrelage</h3>
         <p>
-          Des travaux propres, solides et professionnels.
+          Pose professionnelle de carrelage
+          pour maisons et locaux.
         </p>
-
       </div>
 
-
-      <div class="services">
-
-        <div class="card">
-
-          <div class="icon">
-            🧱
-          </div>
-
-          <h3>
-            Pose de carrelage
-          </h3>
-
-          <p>
-            Pose de carrelage pour sols et murs
-            avec une finition soignée.
-          </p>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="icon">
-            🏠
-          </div>
-
-          <h3>
-            Rénovation
-          </h3>
-
-          <p>
-            Rénovation et amélioration de vos
-            espaces intérieurs et extérieurs.
-          </p>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="icon">
-            ✨
-          </div>
-
-          <h3>
-            Finition
-          </h3>
-
-          <p>
-            Des finitions propres et modernes
-            pour donner une nouvelle apparence
-            à votre maison.
-          </p>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="icon">
-            📐
-          </div>
-
-          <h3>
-            Conseils
-          </h3>
-
-          <p>
-            Conseils sur le choix des matériaux,
-            motifs et disposition.
-          </p>
-
-        </div>
-
+      <div class="card">
+        <div class="icon">🏠</div>
+        <h3>Rénovation</h3>
+        <p>
+          Rénovation et amélioration
+          de vos espaces.
+        </p>
       </div>
+
+      <div class="card">
+        <div class="icon">✨</div>
+        <h3>Finition</h3>
+        <p>
+          Des finitions propres et
+          professionnelles.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PHOTOGRAPHE -->
+  <section id="photo">
+
+    <h2 class="title">📸 Photographe professionnel</h2>
+
+    <p class="subtitle">
+      Capturez vos meilleurs moments avec
+      des photos de qualité professionnelle.
+    </p>
+
+    <div class="photo-gallery">
+
+      <img src="photo1.jpg"
+           alt="Photographie professionnelle">
+
+      <img src="photo2.jpg"
+           alt="Photographie professionnelle">
+
+    </div>
+
+    <div class="photo-buttons">
+
+      <a href="tel:+50948503196"
+         class="btn btn-yellow">
+        📞 Appel direct
+      </a>
+
+      <a href="https://wa.me/50937154135"
+         target="_blank"
+         class="btn btn-white">
+        💬 WhatsApp
+      </a>
 
     </div>
 
   </section>
 
 
-  <!-- À PROPOS -->
-  <section class="about" id="apropos">
+  <!-- VIDEOGRAPHE -->
+  <section id="video">
 
-    <div class="about-box">
+    <h2 class="title">🎥 Vidéographe professionnel</h2>
 
-      <h2>
-        À propos de Valmix Carreleur
-      </h2>
+    <p class="subtitle">
+      Captation vidéo pour vos événements,
+      projets et moments importants.
+    </p>
+
+    <div class="card">
+
+      <div class="icon">🎥</div>
+
+      <h3>Service Vidéographie</h3>
 
       <p>
-        Valmix Carreleur vous accompagne dans
-        vos projets de construction, rénovation
-        et décoration.
-
-        Notre objectif est de fournir un travail
-        sérieux, propre et de qualité.
+        Des vidéos de qualité pour garder
+        vos meilleurs souvenirs.
       </p>
+
+      <div class="buttons">
+
+        <a href="tel:+50948503196"
+           class="btn btn-yellow">
+          📞 Appel direct
+        </a>
+
+        <a href="https://wa.me/50937154135"
+           target="_blank"
+           class="btn btn-white">
+          💬 WhatsApp
+        </a>
+
+      </div>
 
     </div>
 
@@ -458,84 +420,39 @@
 
 
   <!-- CONTACT -->
-  <section class="contact" id="contact">
+  <section id="contact">
 
-    <div class="container">
+    <div class="contact">
 
-      <div class="title">
+      <h2 class="title">📍 Contact</h2>
 
-        <h2>
-          Contactez-<span>nous</span>
-        </h2>
+      <p>
+        <strong>Adresse :</strong><br>
+        Saint Jean du Sud (Cayes)
+      </p>
 
-        <p>
-          Parlez-nous de votre projet.
-        </p>
+      <p>
+        <strong>📞 Appel :</strong><br>
+        +509 4850 3196
+      </p>
 
-      </div>
+      <p>
+        <strong>💬 WhatsApp :</strong><br>
+        +509 3715 4135
+      </p>
 
+      <div class="buttons">
 
-      <div class="contact-box">
+        <a href="tel:+50948503196"
+           class="btn btn-yellow">
+          📞 Appeler maintenant
+        </a>
 
-        <!-- WHATSAPP -->
-        <div class="contact-item">
-
-          💬
-          <strong>
-            WhatsApp :
-          </strong>
-
-          +509 3715 4135
-
-        </div>
-
-
-        <!-- APPEL -->
-        <div class="contact-item">
-
-          📞
-          <strong>
-            Appel direct :
-          </strong>
-
-          +509 4850 3196
-
-        </div>
-
-
-        <div class="contact-item">
-
-          📍
-          <strong>
-            Localisation :
-          </strong>
-
-          Haïti
-
-        </div>
-
-
-        <div class="buttons">
-
-          <!-- BOUTON WHATSAPP -->
-          <a
-            class="btn whatsapp"
-            href="https://wa.me/50937154135"
-            target="_blank"
-          >
-            💬 WhatsApp
-          </a>
-
-
-          <!-- BOUTON APPEL -->
-          <a
-            class="btn call"
-            href="tel:+50948503196"
-          >
-            📞 Appel direct
-          </a>
-
-        </div>
+        <a href="https://wa.me/50937154135"
+           target="_blank"
+           class="btn btn-white">
+          💬 Écrire sur WhatsApp
+        </a>
 
       </div>
 
@@ -546,20 +463,28 @@
 
   <!-- FOOTER -->
   <footer>
-
-    <p>
-      © 2026
-      <strong>
-        Valmix Carreleur
-      </strong>
-      — Tous droits réservés.
-    </p>
-
-    <p class="top">
-      Carrelage • Rénovation • Finition
-    </p>
-
+    © 2026 <strong>VALMIX CARRELEUR</strong> —
+    Tous droits réservés.
   </footer>
 
+
+  <!-- ANIMATION AU SCROLL -->
+  <script>
+    const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+
 </body>
-  </html>
+</html>
